@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Philip Macharia Kamau — Portfolio</title>
+<meta name="description" content="Interactive portfolio for Philip Macharia Kamau — ICT Engineer.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><div class="avatar" aria-hidden>PMK</div>
+  <div class="title"><div class="name">Philip Macharia Kamau</div><div class="role">Lead ICT Engineer — Infrastructure • Security • Projects</div></div></div>
+  <nav class="nav">
+    <a href="#overview">Overview</a>
+    <a href="#experience">Experience</a>
+    <a href="#certs">Certifications</a>
+    <a href="#achievements">Achievements</a>
+    <button id="contactBtn" class="contactBtn">Contact</button>
+  </nav>
+</header>
+
+<main class="container">
+<section id="overview" class="panel">
+  <h1>Technical & Strategic IT Leader</h1>
+  <p class="muted">Results-driven IT professional with 5+ years in ICT infrastructure, system administration, and project leadership.</p>
+  <div class="kpis">
+    <div class="kpi"><div class="num">5+</div><div class="lbl">Years</div></div>
+    <div class="kpi"><div class="num">150+</div><div class="lbl">Staff trained</div></div>
+    <div class="kpi"><div class="num">99%</div><div class="lbl">Uptime</div></div>
+  </div>
+</section>
+
+<section id="experience" class="panel">
+  <h2>Professional Experience</h2>
+  <div class="timeline">
+    <div class="tl-item"><strong>ICT Engineer — Hotpoint Appliances Ltd</strong><div class="muted">Jul 2016 — Present</div>
+      <ul><li>Lead ICT projects and security improvements</li><li>Administer AD, Google Workspace, Sophos</li></ul></div>
+    <div class="tl-item"><strong>Head ICT Technician — Datacomm</strong><div class="muted">May 2011 — Jun 2016</div></div>
+    <div class="tl-item"><strong>Senior ICT Technician — African Graphics</strong><div class="muted">2007 — 2009</div></div>
+  </div>
+</section>
+
+<section id="certs" class="panel">
+  <h2>Education & Certifications</h2>
+  <ul>
+    <li>Diploma in ICT — Datascience Institute of Technology (2005–2006)</li>
+    <li>PMP — Project Management Institute (2024 — Ongoing)</li>
+    <li>Oracle OCI — 2023, CFOT — 2022, CompTIA Security+ — 2017</li>
+  </ul>
+</section>
+
+<section id="achievements" class="panel">
+  <h2>Skills & Achievements</h2>
+  <div class="chartWrap"><canvas id="skillsCanvas" width="400" height="240"></canvas></div>
+  <div class="achievements">
+    <ul>
+      <li>Implemented Sophos Firewall</li>
+      <li>Trained 150+ staff</li>
+      <li>Led infrastructure rollouts</li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<!-- Contact Modal -->
+<div id="contactModal" class="modal" aria-hidden="true" role="dialog">
+  <div class="modalContent">
+    <button id="closeModal" class="closeBtn" aria-label="Close">✕</button>
+    <h3>Contact</h3>
+    <p><strong>Email:</strong> <a href="mailto:p.kamau@outlook.com">p.kamau@outlook.com</a> <button class="copyBtn" data-copy="p.kamau@outlook.com">Copy</button></p>
+    <p><strong>Phone:</strong> <a href="tel:+254736552309">0736 552 309</a> <button class="copyBtn" data-copy="+254736552309">Copy</button></p>
+    <p><strong>LinkedIn:</strong> <a href="https://ke.linkedin.com/in/phillmash" target="_blank">linkedin.com/in/phillmash</a></p>
+  </div>
+</div>
+
+<script src="assets/charts.js"></script>
+<script>
+// Modal behaviour
+const contactBtn = document.getElementById('contactBtn');
+const modal = document.getElementById('contactModal');
+const closeModal = document.getElementById('closeModal');
+contactBtn.addEventListener('click', ()=>{ modal.style.display='flex'; modal.setAttribute('aria-hidden','false'); });
+closeModal.addEventListener('click', ()=>{ modal.style.display='none'; modal.setAttribute('aria-hidden','true'); });
+document.querySelectorAll('.copyBtn').forEach(b=>b.addEventListener('click', (e)=>{ const txt = e.target.getAttribute('data-copy'); navigator.clipboard.writeText(txt).then(()=>alert('Copied')); }));
+</script>
+</body>
+</html>
